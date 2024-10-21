@@ -1,3 +1,4 @@
+using System.Reflection;
 using RestaurantAPI;
 using RestaurantAPI.Entities;
 
@@ -9,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RestaurantDbContext>();
 builder.Services.AddScoped<RestaurantSeeder>();
+builder.Services.AddAutoMapper(typeof(RestaurantMappingProfile));
 
 var app = builder.Build();
 var scope = app.Services.CreateScope();
